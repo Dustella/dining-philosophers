@@ -9,6 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vueuse/core": "^9.6.0",
+    "naive-ui": "^2.34.2",
+    "ts-async-semaphore": "^3.0.4",
     "vue": "^3.2.41"
   },
   "devDependencies": {
