@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import TheChopstick from './components/TheChopstick.vue';
-import ThePhilosopherVue from './components/ThePhilosopher.vue';
+import TheChopstick from './components/TheChopstick.vue'
+import ThePhilosopherVue from './components/ThePhilosopher.vue'
 </script>
 
 <template>
-  <div class="table"></div>
-  <ThePhilosopherVue v-for="i in 5" class="phi-box" :ind="i" />
-  <TheChopstick v-for="i in 5" :ind="i"/>
+  <!-- <div class="table" /> -->
+  <ThePhilosopherVue v-for="i in 5" :key="i" :ind="i" />
+  <TheChopstick v-for="i in 5" :key="i" :ind="i" />
 </template>
 
 <style scoped>
@@ -17,8 +17,5 @@ import ThePhilosopherVue from './components/ThePhilosopher.vue';
   height: 15rem;
   width: 15rem;
   border: 1px solid;
-}
-.phi-box{
-  position: absolute;
 }
 </style>

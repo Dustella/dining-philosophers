@@ -9,9 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@antfu/eslint-config": "^0.34.0",
     "@vueuse/core": "^9.6.0",
+    "eslint": "^8.29.0",
     "naive-ui": "^2.34.2",
-    "ts-async-semaphore": "^3.0.4",
+    "ts-semaphore": "^1.0.0",
+    "unocss": "^0.47.6",
     "vue": "^3.2.41"
   },
   "devDependencies": {

@@ -1,13 +1,14 @@
 <script setup lang="ts">
 const props = defineProps({
-    ind:Number
+  ind: Number,
 })
-const offset = `${0.2*props.ind!+0.105}turn`
+const offset = `${0.2 * props.ind! + 0.105}turn`
 </script>
 
 <template>
-
-    <div class="chop"></div>
+  <div class="translate-y--4">
+    <div class="chop" />
+  </div>
 </template>
 
 <style scoped>
@@ -17,6 +18,6 @@ const offset = `${0.2*props.ind!+0.105}turn`
     width: 0;
     background-color: black;
     border: 1px solid;
-    transform: rotate(v-bind(offset)) translateY(7rem);
+    transform: rotate(v-bind(offset)) translateY(6rem);
 }
 </style>

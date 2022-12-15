@@ -1,23 +1,42 @@
 <script lang="ts" setup>
-import { computed } from 'vue';
+import { computed } from 'vue'
+import { chopsticks, eat, philosopher } from '../logic'
 
-const props= defineProps({
-    isActive:Boolean,
-    ind: Number
+const props = defineProps({
+  isActive: Boolean,
+  ind: Number,
 })
-const offset = computed(()=>`${props.ind!*0.2}turn`)
-console.log(offset.value)
+const offset = computed(() => `${props.ind! * 0.2}turn`)
+let a = 0
+setInterval(() => {
+  a++
+  a %= 5
+  eat(a)
+  console.log(chopsticks)
+  console.log(philosopher)
+}, 1000)
 </script>
 
 <template>
-    <div class="phi-box"></div>
+  <div class="absolute border-1" />
+  <div class="wrapper">
+    <div class="phi-box">
+      <!-- normal phi -->
+      <svg t="1671027766124" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7585" width="64" height="64"><path d="M629.76 504.32c114.3808 27.3408 208.6912 87.4496 282.9312 180.5312C986.9312 777.8304 1024 884.1216 1024 1003.52 1024 1017.2416 1017.1392 1024 1003.52 1024S983.04 1017.2416 983.04 1003.52c0-129.6384-46.08-240.64-138.24-332.8C752.64 578.56 641.7408 532.48 512 532.48c-129.7408 0-240.64 46.08-332.8 138.24C87.04 762.88 40.96 873.8816 40.96 1003.52c0 13.7216-6.8608 20.48-20.48 20.48S0 1017.2416 0 1003.52c0-119.3984 37.0688-225.6896 111.3088-318.7712C185.5488 591.7696 279.8592 531.6608 394.24 504.32 349.9008 482.2016 314.0608 449.7408 286.72 407.04 259.3792 364.4416 245.76 317.44 245.76 266.24c0-73.3184 26.0096-136.0896 78.0288-188.2112C375.9104 26.0096 438.5792 0 512 0c73.4208 0 136.0896 26.0096 188.2112 78.0288C752.2304 130.1504 778.24 192.9216 778.24 266.24c0 51.2-13.6192 98.2016-40.96 140.8C709.9392 449.7408 674.0992 482.2016 629.76 504.32zM350.72 427.52C395.0592 470.2208 448.8192 491.52 512 491.52c63.1808 0 116.4288-21.8112 159.9488-65.3312C715.5712 382.6688 737.28 329.4208 737.28 266.24c0-63.0784-21.7088-116.4288-65.3312-160.0512C628.4288 62.6688 575.1808 40.96 512 40.96c-63.1808 0-116.5312 21.7088-159.9488 65.2288C308.4288 149.8112 286.72 203.1616 286.72 266.24 286.72 329.4208 308.0192 383.1808 350.72 427.52z" p-id="7586" /></svg>
+    </div>
+  </div>
 </template>
 
 <style scoped>
 .phi-box{
-    height: 2rem;
-    width: 2rem;
-    border:1px solid;
-    transform:rotate(v-bind(offset)) translate(-1rem,9rem);
+    height: 4rem;
+    width: 4rem;
+    position: absolute;
+    /* border:1px solid; */
+    transform: translateX(-50%);
+}
+.wrapper{
+    transform:rotate(v-bind(offset)) translate(-0rem,9rem);
+
 }
 </style>
