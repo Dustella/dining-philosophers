@@ -14,12 +14,12 @@ const chopsticks = reactive([false, false, false, false, false])
 export type PhiStatus = 'thinking' | 'hungry' | 'eating'
 
 const philosopher = reactive([
-  'thinking' as PhiStatus,
-  'thinking' as PhiStatus,
-  'thinking' as PhiStatus,
-  'thinking' as PhiStatus,
-  'thinking' as PhiStatus,
-])
+  'thinking',
+  'thinking',
+  'thinking',
+  'thinking',
+  'thinking',
+] as PhiStatus[])
 
 const eat = async (index: number, time: number, leftfirst: boolean) => {
   philosopher[index] = 'hungry'

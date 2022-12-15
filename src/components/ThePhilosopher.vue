@@ -10,11 +10,13 @@ const props = defineProps({
 })
 const offset = computed(() => `${props.ind! * 0.2}turn`)
 const z_offset = computed(() => `${props.ind! * -0.2}turn`)
+const plate = computed(() => props.status === 'eating' ? 'black' : 'white')
 </script>
 
 <template>
   <div class="absolute border-1" />
   <div class="wrapper">
+    <div class="absolute h-7 w-7 rounded-full bg-white translate-x--1/2 translate-y--13 border-1 plate" />
     <div class="phi-box">
       <div class="rotate-wrapper">
         {{ props.ind! - 1 }}
@@ -42,5 +44,9 @@ const z_offset = computed(() => `${props.ind! * -0.2}turn`)
 }
 .rotate-wrapper{
     transform:rotate(v-bind(z_offset));
+}
+
+.plate{
+  background-color: v-bind(plate); ;
 }
 </style>

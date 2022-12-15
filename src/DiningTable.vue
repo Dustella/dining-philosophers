@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import TheChopstick from './components/TheChopstick.vue'
-import ThePhilosopherVue from './components/ThePhilosopher.vue'
+import ThePhilosopher from './components/ThePhilosopher.vue'
 import { chopsticks, eat, philosopher } from './logic'
-import type { PhiStatus } from './logic'
 
 setInterval(() => {
   // random philosopher picks up chopsticks
@@ -14,8 +13,8 @@ setInterval(() => {
 </script>
 
 <template>
-  <!-- <div class="table" /> -->
-  <ThePhilosopherVue v-for="i in 5" :key="i" :ind="i" :status="philosopher[i - 1]" />
+  <div class="table" />
+  <ThePhilosopher v-for="i in 5" :key="i" :ind="i" :status="philosopher[i - 1]" />
   <TheChopstick v-for="i in 5" :key="i" :ind="i" :occupied="chopsticks[i - 1]" />
 </template>
 
@@ -24,8 +23,8 @@ setInterval(() => {
   position: absolute;
   transform: translate(-50%,-50%);
   border-radius: 100%;
-  height: 15rem;
-  width: 15rem;
+  height: 17rem;
+  width: 17rem;
   border: 1px solid;
 }
 </style>
